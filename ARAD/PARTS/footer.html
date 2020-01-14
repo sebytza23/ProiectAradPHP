@@ -1,0 +1,45 @@
+<footer id="fh5co-footer" class="fh5co-bg" role="contentinfo" style="margin-top:-10em;padding:0px;">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row row-pb-md">
+			<?php if (!isset($_SESSION['username'])) : ?>
+                <div class="col-md-4 fh5co-widget">
+                    <h3><?= _ACCOUNT; ?></h3>
+                    <h5><?= _MEMBER; ?> </h5>
+                    <h4><a class="btn btn-primary" href="..\Files\REGISTER\register.php" target="opener"><?= _CREATE; ?></a></h4>
+                </div>
+				<?php else : ?>
+				<div class="col-md-4 fh5co-widget">
+                    <h3><?= _ACCOUNT2; ?></h3>
+                    <h5><?= _DESC; ?> </h5>
+                    <h4><a class="btn btn-primary" target="opener" href="Files/PHP/panel.php?idnume=<?php echo $_SESSION['username'];?>&amp;code=0"><?= _ACC; ?></a></h4>
+                </div>
+				<?php endif; ?>
+				
+                <div class="col-md-4">
+                    <h3> <?= _ABOUT; ?></h3>
+                    <div class="col-md-4 col-sm-4 col-xs-6">
+                        <ul class="fh5co-footer-links" style="width:300px;">
+                            <li><a href="Files/PHP/categories.php" target = "opener"><?= _CATEG; ?></a></li>
+                            <li><a href="Files/PHP/archived.php" target="opener"><?= _ARCHIVED; ?></a></li>
+							<li>  
+								<form method='get' action='' id='form_lang' >
+									<select name='lang' onchange='changeLang();' value = "Select Language" >
+									   <option value='english' <?php if(isset($_SESSION['lang']) && $_SESSION['lang'] == 'english'){ echo "selected"; } ?> >English</option>
+									   <option value='romanian' <?php if(isset($_SESSION['lang']) && $_SESSION['lang'] == 'romanian'){ echo "selected"; } ?> >Romanian</option>
+									</select>
+								</form>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row copyright">
+                <div class="col-md-12 text-center">
+                    <p>
+                        <h5 class="block">&copy; 2019 | <?= _RIGHTS; ?></h5> 
+                        <h5 class="block"><?= _CREATED; ?>Serban Marin-Eusebiu & Ceolca Paul-Robert</h5>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>

@@ -1,0 +1,59 @@
+
+iframe{
+	min-height:35em;
+}
+
+.frame{
+	padding-top:4.50em;
+	margin:0 5.79rem 0rem 5rem;
+	height:100%;
+}
+
+.searchbar{
+	display:inline-block;
+	height:18px;
+	width:180px;
+	border:2px solid rgb(134,107,176);
+	border-radius:5px;
+	outline:none;
+	margin-top:2px;
+	margin-right:-10px;
+	margin-left:-10px;
+	font-family:'Times New Roman', times, sans;
+	font-weight:bold;
+	opacity:0.5px;
+	background:transparent;
+	color:gray;
+}
+
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+	border: 2px solid #555555;
+}
+
+
+
+@media (max-width: 991px) {
+	.frame
+	{
+		margin-left: 1rem;
+		margin-right:1rem;
+	}
+	
+	
+}
+
+

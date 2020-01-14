@@ -1,0 +1,39 @@
+.chenar{
+	display:block;
+	background-color:#484848;
+	height:500px;
+	border-radius:5px;
+	border: solid #252525;
+	border-width: 0px 0px 2px;
+}
+.detaliiut{
+	border-left:1px solid black;
+	display:block;
+	margin-left:10em;
+	padding:3px;
+	height:494px;
+
+}
+.subid{
+	color:#ffffff;
+	background-color:#666666;
+	padding:5px 5px 5px 5px;
+	border-radius:5px;
+	position:absolute;
+	margin-left:-159px;
+	margin-top:5em;
+	width:140px;
+}
+
+.inserarepoza{
+	width:100px;
+	height:100px;
+	border-radius:50%;
+	position:absolute;
+	margin-top:-16.6em;
+	margin-left:-134px;
+	opacity:0.0;
+}
+.scrisuri{
+	color:#999999;font-weight: bold;font-size:17px;
+}

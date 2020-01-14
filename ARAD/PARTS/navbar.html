@@ -1,0 +1,63 @@
+<div class="navigation-wrap bg-light start-header start-style">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="navbar navbar-expand-md navbar-light">
+					<h5 style="margin-right:3px;margin-top:3px;"><?= _MODE; ?> </h5>
+                    <span class="navbar-brand" style="margin-left:10px;margin-right:13px;margin-top:-5px;"><?php include 'Files/PARTS/dark.html'; ?>   </span>
+					<h5 style="margin-right:3px;margin-top:3px;"><?= _MODE2; ?> </h5>
+					
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto py-4 py-md-0">
+							<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 active">
+                                    <a class="nav-link" href="..\Files\PHP\categories.php" target = "opener"><?= _HOME; ?></a>
+                            </li>
+							<li class="pl-4 pl-md-0 ml-0 ml-md-4">
+                                    <form action="Files/PHP/search.php" method="post" target="opener"> <input type="text" name="word" required class="searchbar" placeholder="<?= _SEARCH; ?>"><input type="submit" style = "display:none"></form>
+                            </li>
+                            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+							<?php if(!isset($_SESSION['username'])) : ?>
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><?= _ACCC; ?></a>
+									<div class="dropdown-menu">
+										<a class="dropdown-item" href="Files/REGISTER/login.php" target = "opener"><?= _CONNECT; ?></a>
+										<a class="dropdown-item" href="Files/REGISTER/register.php" target = "opener"><?= _SIGNUP; ?></a>
+									</div>
+							<?php else : ?>
+							<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['username']; ?></a>
+								<div class="dropdown-menu">
+										<a class="dropdown-item" target="opener" href="Files/PHP/panel.php?idnume=<?php echo $_SESSION['username'];?>&amp;code=0"><?= _PRF; ?></a>
+										<form method ="post" action = "index.php?logout='1'"><button class="dropdown-item" style = "color:red;font-weight:bold;" type="submit"><?= _LOGOUT; ?></button></form> 
+										
+								<?php endif; 
+								if (isset($_GET['logout'])) {
+									session_destroy(); //inchide sesiunea
+									unset($_SESSION['username']); // scoate ID-ul din zona de conectare
+									header("location: index.php");//Resetare la Pagina Principala
+								}
+								?>
+								
+								</div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>      
+            </div>
+        </div>
+    </div>
+</div>
+<div class = "frame" align="center">
+	<iframe name="opener" src="..\Files\PHP\categories.php" width="80%" height="100%" frameborder='0' ></iframe>
+</div>
+
+       
+          
+                
+                       
+               
+      
+
+<div class="my-5 py-5">
+</div>
